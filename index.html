@@ -1,134 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!doctype html>
+<html lang="ru-RU">
 <head>
+	<meta charset="utf-8">
+	<!--[if IE]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
 
-	<title>Мысин Олег | Web Designer | oleg.mysin@yahoo.com</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>jsSlider</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/> -->
+	<meta name="HandheldFriendly" content="True"/>
+	<!-- Mobile Internet Explorer позволяет принудительно активировать технологию ClearType для сглаживания шрифтов -->
+	<!--[if IE]>
+	<meta http-equiv="cleartype" content="on"/>
+	<![endif]-->
+	<!-- Запрет распознания телефонов и адресов -->
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="format-detection" content="address=no"/>
+	<!-- <link rel="apple-touch-startup-image" href="images/startup.png">
+	<link rel="apple-touch-icon" href="images/touch-icon-iphone.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="images/touch-icon-ipad.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="images/touch-icon-iphone-retina.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="images/touch-icon-ipad-retina.png"/> -->
 
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
-	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+	<link rel="stylesheet" href="style.css">
 
+	<link href='http://fonts.googleapis.com/css?family=Cuprum:700,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	
+	<!-- end CSS-->
 </head>
+
 <body>
 
-<div id="doc2" class="yui-t7">
-	<div id="inner">
-	
-		<div id="hd">
-			<div class="yui-gc">
-				<div class="yui-u first">
-					<h1>Мысин Олег</h1>
-					<h2>Web программист</h2>
-				</div>
+	<header id="header">
+		<div class="titleBlock">
+			<h1>Заголовок</h1>
+		</div>
+	</header>
 
-				<div class="yui-u">
-					<div class="contact-info">
-						
-						<h3><a href="mailto:name@yourdomain.com">oleg.mysin@yahoo.com</a></h3>
-						<h3>+7 952 024 32 00</h3>
-					</div><!--// .contact-info -->
-				</div>
-			</div><!--// .yui-gc -->
-		</div><!--// hd -->
-
-		<div id="bd">
-			<div id="yui-main">
-				<div class="yui-b">
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Образование</h2>
-						</div>
-						<div class="yui-u">
-							<h2>Чувашский Государственный Университет
-                      им. И. Н. Ульянова</h2>
-							<h3>факультет прикладной математики, физики и информационных технологий</h3>
-						</div>
-					</div><!--// .yui-gf -->
+	<div class="containerMain">
+		
+		<div class="gallery"> 
+			<a class="galleryBox" title="pic1" href="img/big/01.jpg"><img alt="" src="img/01.jpg"/></a>
+			<a class="galleryBox" title="pic2" href="img/big/02.jpg"><img alt="" src="img/02.jpg"/></a>
+			<a class="galleryBox" title="pic3" href="img/big/03.jpg"><img alt="" src="img/03.jpg"/></a>
+			<a class="galleryBox" title="pic4" href="img/big/04.jpg"><img alt="" src="img/04.jpg"/></a>
+			<a class="galleryBox" title="pic5" href="img/big/05.jpg"><img alt="" src="img/05.jpg"/></a>
+			<a class="galleryBox" title="pic6" href="img/big/06.jpg"><img alt="" src="img/06.jpg"/></a>
+			<a class="galleryBox" title="pic7" href="img/big/07.jpg"><img alt="" src="img/07.jpg"/></a>
+		</div>
 
 
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Ключевые навыки</h2>
-						</div>
-						<div class="yui-u">
-							<ul class="talent">
-								<li>HTML</li>
-								<li>CSS</li>
-								<li class="last">Javascript</li>
-							</ul>
+	</div><!--// doc -->
 
-							<ul class="talent">
-								<li>Jquery</li>
-								<li>Backbone</li>
-								<li class="last"> </li>
-							</ul>
+	<footer id="footer">
+		<div class="titleBlock">
+			<h1>Подвал</h1>
+		</div>
+	</footer>
 
-							<ul class="talent">
-								<li>PHP</li>
-								<li>SQL</li>
-								<li class="last">unix-like OS</li>
-							</ul>
-						</div>
-					</div><!--// .yui-gf-->
+	<div id="overlay"></div>
 
-					<div class="yui-gf">
-	
-						<div class="yui-u first">
-							<h2>Опыт работы</h2>
-						</div><!--// .yui-u -->
-
-						<div class="yui-u">
-
-							<div class="job">
-								<h2>Diasoft</h2>
-								<h3>Специалист отдела внедрения</h3>
-								<h4>сентябрь 2012 - ноябрь 2013</h4>
-								<p>Сдача в эксплуатацию проектов в «Чувашкредитпромбанке», «Интерпромбанке» по внедрению автоматизированной банковской системы (Delphi, SQL). Интеграция с фронт-эндом (Javascript). Работа с клиентами.</p>
-							</div>
-
-							<div class="job last">
-								<h2>Инфолинк</h2>
-								<h3>Менеджер по работе с клиентами</h3>
-								<h4>ноябрь 2009 - апрель 2010</h4>
-								<p>Осуществление технической и информационной поддержки клиентов сети. Диагностика и ремонт компьютеров. Ремонт и профилактическое обслуживание оргтехники.</p>
-							</div>
-
-						</div><!--// .yui-u -->
-					</div><!--// .yui-gf -->
-
-					
-					<div class="yui-gf last">
-						<div class="yui-u first">
-							<h2>Личные качества</h2>
-						</div>
-						<div class="yui-u">
-							<p class="enlarge">
-								Увлечен веб-разработкой, интересуюсь Javascript и его фреймворками, участвую в открытых проектах.
-
-							<p class="enlarge">
-								Внимательный, добросовестный в работе. Нравится работать в команде. Обладаю творческими способностями. Смогу быстро освоить новый программный продукт, технологию. Технический английский.
-						</div>
-					</div><!--// .yui-gf -->
-
-
-				</div><!--// .yui-b -->
-			</div><!--// yui-main -->
-		</div><!--// bd -->
-
-		<div id="ft">
-			<p>Мысин Олег &mdash; <a href="mailto:name@yourdomain.com">oleg.mysin@yahoo.com</a> &mdash; +7 952 024 32 00</p>
-		</div><!--// footer -->
-
-	</div><!-- // inner -->
-
-
-</div><!--// doc -->
-
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 
 </body>
+
 </html>
 
