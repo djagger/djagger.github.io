@@ -18,26 +18,29 @@
 						'<p title="close" id="closeSign">X</p>' +
 						'<div class="nav">' +
 							'<a class="prev slideNav" title="Preview" id="lightboxPrev"><</a>' +
-							'<a class="next slideNav" title="Next;" id="lightboxNext">></a>' +
+							'<a class="next slideNav" title="Next" id="lightboxNext">></a>' +
 						'</div>' +
 					'</div>';
 
 				$('body').append(lightbox);
 
+				var imgNum=1;
 				$('html').find('.gallery a').each(function() {
 					var galleryImgLinks = $(this).attr('href');
-					$('#popup').append('<img src="' + galleryImgLinks + '">');
+					var gallertImgAlts = $(this).children().attr('alt');
+					$('#popup').append('<div class="imgWrap"><span>' + gallertImgAlts + '</span><img src="' + galleryImgLinks + '" alt="' + gallertImgAlts + '"><span id="counterImg">' + imgNum + '</span></div>');
+					imgNum++;
 				});
 
 				// Сколько у нас слайдов?
-				size = $('#popup img').length;
-				console.log('size ' + size);
+				size = $('#popup .imgWrap').length;
 			
-				$('#popup img').hide();
+				$('#overlay').show();
+				$('#popup .imgWrap').hide();
 
 				//console.log('Номер слайда ' + slideNum);
 				//debugger;
-				$('#popup img:eq(' + slideNum + ')').show();
+				$('#popup .imgWrap:eq(' + slideNum + ')').show();
 				
 				current = slideNum;
 				//console.log('Текущий слайд current ' + current);
@@ -46,24 +49,15 @@
 
 		//Закрываем popup
 		$('body').on('click', '#closeSign', function() { 
-			$('#popup').remove();
+			closePopup();
 		});
 
 		//Закрываем popup на esc
 		$(document).keyup(function(e) {
 			if (e.keyCode == 27) {
-				$('#popup').remove();
+				closePopup();
 			}
 		});
-
-		//console.log(current);
-
-		/*$('body').on({mouseenter: function() { 
-				$('.nav').fadeIn(300);
-			}, mouseleave: function() {
-				$('.nav').fadeOut(300);   
-			} 
-		},'#popup');*/
 		
 		// Навигация prev/next
 		$('body').on('click', '.slideNav', function(e) {
@@ -73,7 +67,6 @@
 				
 			var clickOn = $(this);
 			var dest;
-			//console.log('NAV clickOn '+clickOn.hasClass('next'));
 
 			if (clickOn.hasClass('prev')) {
 				dest = current - 1;
@@ -87,31 +80,52 @@
 			
 			} else {
 				dest = current + 1;
-				
-				console.log(dest);
-				
+								
 				if (dest > size - 1) {
 					dest = 0;
 				}
 			}
 			
-			//console.log('Текущий слайд меняем NAV current ' + current);
-			//console.log('Текущий слайд меняем NAV dest ' + dest);
+			console.log('Текущий слайд меняем NAV current ' + current);
+			console.log('Текущий слайд меняем NAV dest ' + dest);
 			// fadeOut curent slide, FadeIn next/prev slide
-			$('#popup img:eq(' + current + ')').fadeOut(200);
+			$('#popup .imgWrap:eq(' + current + ')').fadeOut(200);
 
-			$('#popup img:eq(' + dest + ')').fadeIn(200);
+			$('#popup .imgWrap:eq(' + dest + ')').fadeIn(200);
 				
-			// update current slide
 			current = dest;
-			//console.log('Текущий слайд после NAV current ' + current);
+			console.log('Текущий слайд после NAV current ' + current);
 		});
 
-		function changeImg(current, dest){
-			// fadeOut curent slide, FadeIn next/prev slide
-			$('#popup img:eq(' + current + ')').fadeOut();
-			$('#popup img:eq(' + dest + ')').fadeIn();
+		function closePopup() {
+			$('#popup').remove();
+			$('#overlay').hide();
 		}
+
+		function changeImg(current, dest){
+			$('#popup .imgWrap:eq(' + current + ')').fadeOut();
+			$('#popup .imgWrap:eq(' + dest + ')').fadeIn();
+		}
+
+		//Навигация стрелками клавиатуры
+		$(document.documentElement).keyup(function (event) {
+			if (event.keyCode == 37 ) {
+				dest = current - 1;
+				if (dest < 0) {
+					dest = size - 1;
+				}
+				changeImg(current, dest);
+				current = dest;	
+			} else if (event.keyCode == 39) {
+				dest = current + 1;
+				if (dest > size - 1) {
+					dest = 0;
+				}
+				changeImg(current, dest);
+				current = dest;	  
+			}
+
+		});
 
 	});
 

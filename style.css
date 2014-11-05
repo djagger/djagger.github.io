@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 #header, #footer, #pageHTML, .containerMain {
@@ -23,8 +24,7 @@ img {
 #overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
-  position: absolute;
-  z-index: 999;
+  position: fixed;
   top: 0;
   left: 0;
   display: none;
@@ -36,11 +36,11 @@ img {
 #header {
 	position: relative;
 	height: 100px;
+	border-bottom: 1px dashed #000;
 }
 
-#footer {
-	position: relative;
-	height: 100px;
+.gallery {
+	padding: 10px 0;
 }
 
 .titleBlock {
@@ -53,14 +53,16 @@ img {
 	text-align: center;
 	top: 0;
 	left: 0;
-	width: 100%;
+	right: 0;
+	width: 50%;
 	height: 100%;
-	background: rgba(0, 0, 0, .3);
+	margin: 0 auto;
+	/*background: rgba(0, 0, 0, .3);*/
 }
 
 #closeSign {
 	font-size: 20px;
-	position: fixed;
+	position: absolute;
 	z-index: 999;
 	cursor: pointer;
 	padding: 5px 10px;
@@ -71,7 +73,7 @@ img {
 
 .prev, .next {
 	z-index: 999;
-	background: rgba(100, 100, 100, .5);
+	/*background: rgba(100, 100, 100, .5);*/
 	cursor: pointer;
 	top: 45%;
 	padding: 6px;
@@ -90,13 +92,44 @@ img {
 	right: 7px;
 }
 
-#popup img {
+.imgWrap {
 	position: absolute;
+	left: 0;
+	right: 0;
+	top: 25%;
+	max-width: 90%;
+	max-height: 90%;
+	margin: auto;
+}
+
+.imgWrap span {
+	display: block;
+	margin-bottom: 5px;
+	font-style: italic;
+	color: #fff;
+}
+
+#counterImg {
+	position: absolute;
+	left: 0;
+	right: 0;
+	color: rgba(100, 100, 100, .8);
+	bottom: 3%;
+}
+
+#popup img {
+/*	position: absolute;
 	top: 5%;
 	left: 0px;
 	right: 0px;
 	bottom: 5%;
 	max-width: 90%;
 	max-height: 90%;
-	margin: auto;
+	margin: auto;*/
+}
+
+#footer {
+	position: relative;
+	height: 100px;
+	border-top: 1px dashed #000;
 }
