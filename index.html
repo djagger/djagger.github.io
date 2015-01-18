@@ -1,141 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html>
-<head>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Simple address book app</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.16.0.css" />
+	</head>
 
-	<title>Мысин Олег | Web Designer | oleg.mysin@yahoo.com</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h3>Enter your information:</h3>
+			</div>
+		</div>
 
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+		<div class="container">
+			<div id="contacts"></div>
+			<hr>
+			<footer>
+				<p>On Mithril.js, 2015.</p>
+			</footer>
+		</div>
 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
-	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+		<script type="text/javascript" src="http://code.jquery.com/qunit/qunit-1.16.0.js"></script>
+		<script type="text/javascript" src="vendor/mithril.js"></script>
+		<script type="text/javascript" src="src/ext/functions.js"></script>
 
-</head>
-<body>
+		<script type="text/javascript" src="src/components/contacts/contacts-model.js"></script>
+		<script type="text/javascript" src="src/components/contacts/contacts-ctrl.js"></script>
+		<script type="text/javascript" src="src/components/contacts/contacts-view.js"></script>
 
-<div id="doc2" class="yui-t7">
-	<div id="inner">
-	
-		<div id="hd">
-			<div class="yui-gc">
-				<div class="yui-u first">
-					<h1>Мысин Олег</h1>
-					<h2>Web программист</h2>
-				</div>
-
-				<div class="yui-u">
-					<div class="contact-info">
-						
-						<h3><a href="mailto:name@yourdomain.com">oleg.mysin@yahoo.com</a></h3>
-						<h3>+7 952 024 32 00</h3>
-					</div><!--// .contact-info -->
-				</div>
-			</div><!--// .yui-gc -->
-		</div><!--// hd -->
-
-		<div id="bd">
-			<div id="yui-main">
-				<div class="yui-b">
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Образование</h2>
-						</div>
-						<div class="yui-u">
-							<h2>Чувашский Государственный Университет
-                      им. И. Н. Ульянова</h2>
-							<h3>факультет прикладной математики, физики и информационных технологий</h3>
-						</div>
-					</div><!--// .yui-gf -->
-
-
-					<div class="yui-gf">
-						<div class="yui-u first">
-							<h2>Ключевые навыки</h2>
-						</div>
-						<div class="yui-u">
-							<ul class="talent">
-								<li>HTML</li>
-								<li>CSS</li>
-								<li class="last">Javascript</li>
-							</ul>
-
-							<ul class="talent">
-								<li>Jquery</li>
-								<li>Angular.js</li>
-								<li class="last"> </li>
-							</ul>
-
-							<ul class="talent">
-								<li>PHP</li>
-								<li>SQL</li>
-								<li class="last">unix-like OS</li>
-							</ul>
-						</div>
-					</div><!--// .yui-gf-->
-
-					<div class="yui-gf">
-	
-						<div class="yui-u first">
-							<h2>Опыт работы</h2>
-						</div><!--// .yui-u -->
-
-						<div class="yui-u">
-
-							<div class="job">
-								<h2>Видок</h2>
-								<h3>Веб-разработчик</h3>
-								<h4>с января 2014</h4>
-								<p>Разработка и поддержка сайтов (PHP, Javascript, Angular.js) на различных CMS (Bitrix, Modx).</p>
-							</div>
-
-							<div class="job">
-								<h2>Diasoft</h2>
-								<h3>Специалист отдела внедрения</h3>
-								<h4>сентябрь 2012 - декабрь 2013</h4>
-								<p>Сдача в эксплуатацию проектов в «Чувашкредитпромбанке», «Интерпромбанке» по внедрению автоматизированной банковской системы (Delphi, SQL). Интеграция с фронт-эндом (Javascript). Работа с клиентами.</p>
-							</div>
-
-							<div class="job last">
-								<h2>Инфолинк</h2>
-								<h3>Менеджер по работе с клиентами</h3>
-								<h4>ноябрь 2009 - апрель 2010</h4>
-								<p>Осуществление технической и информационной поддержки клиентовсети. Диагностика и ремонт компьютеров. Ремонт и профилактическое обслуживание оргтехники.</p>
-							</div>
-
-						</div><!--// .yui-u -->
-					</div><!--// .yui-gf -->
-
-					
-					<div class="yui-gf last">
-						<div class="yui-u first">
-							<h2>Личные качества</h2>
-						</div>
-						<div class="yui-u">
-							<p class="enlarge">
-								Увлечен веб-разработкой, интересуюсь Javascript и его фреймворками. Стараюсь учиться также вне рабочего времени, проходя курсы на онлайн-платформах и читая техническую литературу.
-
-							<p class="enlarge">
-								Внимательный, добросовестный в работе. Нравится работать в команде. Обладаю творческими способностями. Смогу быстро освоить новый программный продукт, технологию. Технический английский.
-						</div>
-					</div><!--// .yui-gf -->
-
-
-				</div><!--// .yui-b -->
-			</div><!--// yui-main -->
-		</div><!--// bd -->
-
-		<div id="ft">
-			<p>Мысин Олег &mdash; <a href="mailto:name@yourdomain.com">oleg.mysin@yahoo.com</a> &mdash; +7 952 024 32 00</p>
-		</div><!--// footer -->
-
-	</div><!-- // inner -->
-
-
-</div><!--// doc -->
-
-
-</body>
+		<script type="text/javascript">
+			m.module(document.getElementById('contacts'), Contacts)
+		</script>
+	</body>
 </html>
-
